@@ -60,6 +60,7 @@ public class BootstrapData implements CommandLineRunner {
 
         ericSaved.getBooks().add(dddSaved);
         rodSaved.getBooks().add(noEJBSaved);
+        dddSaved.getPublisher().add(pbsSaved);
 
         authorRepository.save(ericSaved);
         authorRepository.save(rodSaved);
@@ -67,15 +68,11 @@ public class BootstrapData implements CommandLineRunner {
         System.out.println("In Bootstrap");
         System.out.println("Author Count: " + authorRepository.count());
         System.out.println("Book Count: " + bookRepository.count());
+        System.out.println("Publisher Count" + publisherRepository.count());
 
 
     }
 }
-
-
-
-
-
 
 
 
