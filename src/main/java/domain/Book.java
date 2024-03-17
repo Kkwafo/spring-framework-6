@@ -24,6 +24,19 @@ public class Book {
 	inverseJoinColumns = @JoinColumn (name = "author_id"))
 	private Set<Author> authors;
 	
+	@ManyToMany
+	@JoinTable(name= "publisher_book", joinColumns = @JoinColumn(name ="book_id"),
+	inverseJoinColumns = @JoinColumn (name = "publisher_id"))
+	private Set<Publisher> publishers;
+	
+	public Set<Publisher> getPublisher(){
+		return publishers;
+	}
+	
+	public void setPublisher(Set<Publisher> publishers) {
+		this.publishers= publishers;
+	}
+	
 	public Set<Author> getAuthors(){
 		return authors;
 	}
