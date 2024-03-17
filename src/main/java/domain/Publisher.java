@@ -28,11 +28,9 @@ public class Publisher {
 	public Set<Book> getBooks (){
 		return books;
 	}
-	
 	public void setBooks(Set<Book> books) {
 		this.books = books;
 	}
-	
 	public Long getId() {
 		return id;
 	}
@@ -70,5 +68,37 @@ public class Publisher {
 		this.zip = zip;
 	}
 	
+	@Override
+	public boolean equals (Object o) {
+		if(this == o) return true;
+		if(!(o instanceof Publisher)) return false;
+		
+		Publisher publisher = (Publisher) o;
+		return getId() != null ? getId().equals(publisher.getId()) : publisher.getId() == null;	
+	}
+	
+	@Override
+	public int hashCode() {
+		return getId() != null ? getId().hashCode() : 0;
+	}
+	
+    @Override
+    public String toString() {
+        return "Publisher{" +
+                "id=" + id +
+                ", publisherName='" + publisherName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", zip='" + zip + '\'' +
+                ", state='" + state + '\'' +
+                ", books='" + books+
+                '}';
+    }
 	
 }
+
+
+
+
+
+
