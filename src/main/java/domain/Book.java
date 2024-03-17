@@ -16,8 +16,8 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	private String name;
-	private String isbc;
+	private String title;
+	private String isbn;
 	
 	@ManyToMany
 	@JoinTable(name= "author_book", joinColumns = @JoinColumn(name ="book_id"),
@@ -40,28 +40,28 @@ public class Book {
 		this.id = id;
 	}
 	
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 	
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	
-	public String getIsbc() {
-		return isbc;
+	public String getIsbn() {
+		return isbn;
 	}
 	
-	public void setIsbc(String isbc) {
-		this.isbc = isbc;
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
 	
     @Override
     public String toString() {
         return "Book{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", isbc='" + isbc + '\'' +
+                ", title='" + title + '\'' +
+                ", isbn='" + isbn + '\'' +
                 ", authors='" + authors +
                 '}';
     }
